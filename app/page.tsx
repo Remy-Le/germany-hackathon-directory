@@ -3,10 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, Users, ArrowRight } from 'lucide-react';
 import { cities, getUpcomingHackathons } from '@/lib/data';
+import HackathonCalendar from '@/components/hackathon-calendar';
 
 export default function HomePage() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -80,60 +78,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
+      {/* Calendar Section */}
       <section id="events" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-        <h2 className="text-3xl font-bold text-white mb-12">Upcoming Hackathons</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {upcomingHackathons.map((hackathon) => (
-            <Link key={hackathon.id} href={`/hackathon/${hackathon.id}`}>
-              <Card className="h-full bg-slate-800/50 border-slate-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10 overflow-hidden cursor-pointer group">
-                <div className="relative h-48 bg-slate-700 overflow-hidden">
-                  <img 
-                    src={hackathon.image} 
-                    alt={hackathon.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className={hackathon.format === 'in-person' ? 'bg-blue-600' : 'bg-purple-600'}>
-                      {hackathon.format === 'in-person' ? 'In-Person' : 'Hybrid'}
-                    </Badge>
-                  </div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{hackathon.name}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {hackathon.tags.slice(0, 2).map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-slate-700 text-slate-200">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2 text-sm text-slate-300">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-blue-400" />
-                      <span>{new Date(hackathon.date).toLocaleDateString('de-DE', { month: 'short', day: 'numeric' })} - {new Date(hackathon.endDate).toLocaleDateString('de-DE', { month: 'short', day: 'numeric' })}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-blue-400" />
-                      <span>{hackathon.city}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-blue-400" />
-                      <span>{hackathon.registeredParticipants}/{hackathon.maxParticipants} registered</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-slate-700 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-blue-400">{hackathon.prizes}</span>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-400 transition-colors" />
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-white">Hackathon Calendar</h2>
+          <Link href="/submit">
+            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+              Submit Event
+            </Button>
+          </Link>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 overflow-x-auto">
+          <HackathonCalendar />
         </div>
       </section>
 
