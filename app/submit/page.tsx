@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { Home, CheckCircle } from 'lucide-react';
 import { FieldGroup, FieldLabel } from '@/components/ui/field';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cities } from '@/lib/data';
@@ -122,10 +122,9 @@ export default function SubmitPage() {
       {/* Navigation */}
       <nav className="border-b border-slate-800 bg-slate-950/50 backdrop-blur sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-          <Link href="/">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+          <Link href="/" aria-label="Back to home">
+            <Button variant="ghost" size="icon">
+              <Home className="w-4 h-4" />
             </Button>
           </Link>
         </div>

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { cities, getUpcomingHackathons } from '@/lib/data';
 import HackathonCalendar from '@/components/hackathon-calendar';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function HomePage() {
   const upcomingHackathons = getUpcomingHackathons();
@@ -26,26 +27,24 @@ export default function HomePage() {
               Submit Event
             </Link>
           </div>
-          <Link href="/submit">
-            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">Submit Event</Button>
-          </Link>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Link href="/submit">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">Submit Event</Button>
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* Hero + Cities Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white text-balance">
-              Germany&apos;s <span className="text-blue-400">Hackathon</span> Directory
-            </h1>
-            <p className="text-slate-400 mt-1 text-sm max-w-xl text-balance">
-              In-person and hybrid events across Berlin, Munich, Hamburg, Frankfurt, Cologne &amp; Darmstadt.
-            </p>
-          </div>
-          <Link href="/submit">
-            <Button className="bg-blue-600 hover:bg-blue-700 shrink-0">Submit Your Event</Button>
-          </Link>
+        <div className="mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white text-balance">
+            Germany&apos;s <span className="text-blue-400">Hackathon</span> Directory
+          </h1>
+          <p className="text-slate-400 mt-1 text-sm max-w-xl text-balance">
+            In-person and hybrid events across Berlin, Munich, Hamburg, Frankfurt, Cologne &amp; Darmstadt.
+          </p>
         </div>
 
         {/* Cities strip */}
