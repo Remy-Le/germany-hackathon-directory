@@ -1,35 +1,68 @@
-# germany-hackathon-directory
+yarn dev
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+# Germany Hackathon Directory
 
-## Built with v0
+This project is a curated, directory of in-person and hybrid hackathons across Germany. It is built with [Next.js](https://nextjs.org) and designed for discoverability, clarity, and ease of contribution.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## Features
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_kpEuUNVVvxhcOdKloR89GSqb9SjV)
+- Browse upcoming and past hackathons in Germany
+- All event content is in English for international accessibility
+- High-quality, non-pixelated event images
+- Each hackathon includes: name, city, dates, venue, address, format, description, participant limits, website, image, tags, prizes, and contact info
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
 # or
-yarn dev
+yarn install && yarn dev
 # or
-pnpm dev
+pnpm install && pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding a Hackathon
 
-## Learn More
+All hackathons are stored in `lib/data.ts` as objects in the `hackathons` array. To add a new event:
 
-To learn more, take a look at the following resources:
+1. Copy the structure of an existing hackathon object.
+2. Fill in all fields in English (no German or mixed content).
+3. Use a high-resolution, clear image (ideally 800x400px or larger, dpr=2, quality=90+ if from Luma or similar sources).
+4. Submit a pull request or push directly if you have access.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+**Example:**
 
-<a href="https://v0.app/chat/api/kiro/clone/Remy-Le/germany-hackathon-directory" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+```ts
+{
+	id: 'example-hackathon-2026',
+	name: 'Example Hackathon 2026',
+	city: 'Example City',
+	date: '2026-09-01',
+	endDate: '2026-09-03',
+	venue: 'Example Venue',
+	address: '123 Example St, 12345 Example City, Germany',
+	format: 'in-person',
+	description: 'A sample hackathon for demonstration purposes. All content must be in English.',
+	maxParticipants: 100,
+	registeredParticipants: 0,
+	website: 'https://example.com',
+	image: 'https://example.com/image.jpg',
+	tags: ['Sample', 'Demo'],
+	prizes: 'Sample prizes',
+	contact: 'info@example.com',
+	approved: true,
+}
+```
+
+## Contributing
+
+Pull requests are welcome! Please ensure all event content is in English and images are clear and high-resolution.
+
+## License
+
+MIT

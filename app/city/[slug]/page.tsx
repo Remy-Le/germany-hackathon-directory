@@ -107,7 +107,7 @@ export default function CityPage() {
                     <img 
                       src={hackathon.image} 
                       alt={hackathon.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform"
                     />
                     <div className="absolute top-4 right-4">
                       <Badge className={hackathon.format === 'in-person' ? 'bg-blue-600' : 'bg-purple-600'}>

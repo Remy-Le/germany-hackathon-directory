@@ -43,11 +43,11 @@ export default function HackathonDetailPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Image */}
-        <div className="relative h-96 rounded-lg overflow-hidden mb-8 border border-slate-700">
+        <div className="relative h-56 rounded-lg overflow-hidden mb-8 border border-slate-700">
           <img 
             src={hackathon.image} 
             alt={hackathon.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain bg-black"
           />
           <div className="absolute top-4 left-4">
             <Badge className={hackathon.format === 'in-person' ? 'bg-blue-600' : 'bg-purple-600'} size="lg">
