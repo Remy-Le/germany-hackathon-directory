@@ -131,9 +131,20 @@ export default function HackathonDetailPage() {
                   <span className="font-semibold text-white">{hackathon.venue}</span>
                 </p>
                 <p className="text-slate-400">{hackathon.address}</p>
-                <Button variant="outline" size="sm" className="w-full mt-3 text-slate-200 border-slate-600 hover:bg-slate-700">
-                  View on Map
-                </Button>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hackathon.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full mt-3 text-slate-200 border-slate-600 hover:bg-slate-700"
+                  >
+                    View on Map
+                  </Button>
+                </a>
               </div>
             </Card>
           </div>
