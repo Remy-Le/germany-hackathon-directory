@@ -1,13 +1,10 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { cities, getUpcomingHackathons } from '@/lib/data';
 import HackathonCalendar from '@/components/hackathon-calendar';
 
 export default function HomePage() {
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const upcomingHackathons = getUpcomingHackathons();
 
   return (
