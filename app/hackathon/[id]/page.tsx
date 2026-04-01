@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, Users, Award, Mail, Globe, ArrowLeft, Share2 } from 'lucide-react';
+import { MapPin, Calendar, Users, Award, Mail, Globe, ArrowLeft } from 'lucide-react';
 import { getHackathonById } from '@/lib/data';
 
 export default function HackathonDetailPage() {
@@ -25,7 +25,7 @@ export default function HackathonDetailPage() {
     );
   }
 
-  const progress = Math.round((hackathon.registeredParticipants / hackathon.maxParticipants) * 100);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -122,47 +122,11 @@ export default function HackathonDetailPage() {
               </div>
             </Card>
 
-            {/* Registration Progress */}
-            <Card className="bg-slate-800/50 border-slate-700 p-6">
-              <h3 className="font-semibold text-white mb-3">Registration Status</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-300">{progress}% Registered</span>
-                  <span className="text-slate-400">{hackathon.maxParticipants - hackathon.registeredParticipants} spots left</span>
-                </div>
-                <div className="w-full bg-slate-700 rounded-full h-3">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-              </div>
-            </Card>
+
           </div>
 
           {/* Right Sidebar */}
           <div className="space-y-6">
-            {/* CTA Card */}
-            <Card className="bg-gradient-to-br from-blue-600 to-blue-700 border-blue-500 p-6 sticky top-24">
-              <h3 className="text-xl font-bold text-white mb-2">{hackathon.maxParticipants - hackathon.registeredParticipants > 0 ? 'Spots Available' : 'Sold Out'}</h3>
-              <p className="text-blue-100 mb-6 text-sm">
-                {hackathon.maxParticipants - hackathon.registeredParticipants > 0 
-                  ? `${hackathon.maxParticipants - hackathon.registeredParticipants} spots remaining`
-                  : 'This event is currently at capacity'
-                }
-              </p>
-              <Button 
-                className="w-full bg-white text-blue-600 hover:bg-slate-100 font-semibold mb-3"
-                disabled={hackathon.maxParticipants - hackathon.registeredParticipants <= 0}
-              >
-                Register Now
-              </Button>
-              <Button variant="outline" className="w-full border-blue-300 text-white hover:bg-blue-500">
-                <Share2 className="w-4 h-4 mr-2" />
-                Share Event
-              </Button>
-            </Card>
-
             {/* Contact Card */}
             <Card className="bg-slate-800/50 border-slate-700 p-6 space-y-4">
               <h3 className="font-bold text-white">Get in Touch</h3>
