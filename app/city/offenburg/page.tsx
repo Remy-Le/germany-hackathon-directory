@@ -7,14 +7,14 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, ArrowRight, ArrowLeft } from 'lucide-react';
 import { cities, getHackathonsByCity } from '@/lib/data';
 
-export default function MannheimPage() {
-	const city = cities.find(c => c.slug === 'mannheim');
+export default function OffenburgPage() {
+	const city = cities.find(c => c.slug === 'offenburg');
 	const hackathons = getHackathonsByCity(city?.name || '');
 
 	const cityInfo = {
-		title: 'Mannheim – Student Innovation & Q-Summit',
+		title: 'Offenburg – Black Forest Innovation',
 		description:
-			'Mannheim is known for its vibrant student community and the annual Q-Hackathon, attracting ambitious students from across Europe. The city is a hub for entrepreneurship, tech, and real-world challenges.'
+			'Offenburg is the gateway to the Black Forest and a hotspot for smart region, sustainability, and mobility hackathons. The city brings together tech, nature, and community-driven innovation.'
 	};
 
 	return (
@@ -119,7 +119,7 @@ export default function MannheimPage() {
 					<h2 className="text-2xl font-bold text-white mb-8">Explore Other Cities</h2>
 					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 						{cities
-							.filter(c => c.slug !== 'mannheim')
+							.filter(c => c.slug !== 'offenburg')
 							.map((otherCity) => (
 							<Link key={otherCity.slug} href={`/city/${otherCity.slug}`}>
 								<Card className="h-20 bg-slate-800/50 hover:bg-slate-700/50 border-slate-700 cursor-pointer transition-all hover:border-blue-500 flex items-center justify-center">
@@ -133,3 +133,4 @@ export default function MannheimPage() {
 		</div>
 	);
 }
+

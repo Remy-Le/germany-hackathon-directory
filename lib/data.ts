@@ -25,6 +25,10 @@ export const cities = [
   { name: 'Frankfurt', slug: 'frankfurt' },
   { name: 'Cologne', slug: 'cologne' },
   { name: 'Darmstadt', slug: 'darmstadt' },
+  { name: 'Mannheim', slug: 'mannheim' },
+  { name: 'Karlsruhe', slug: 'karlsruhe' },
+  { name: 'Offenburg', slug: 'offenburg' },
+  { name: 'Freiburg im Breisgau', slug: 'freiburg-im-breisgau' },
 ];
 
 export const hackathons: Hackathon[] = [
@@ -44,7 +48,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/gallery-images/fv/9ca2825f-781f-48c2-bc21-7dd90ac2d3ef',
     tags: ['AI', 'Directories', 'SMB', 'Berlin'],
     prizes: '€3,000+ curated prize package, CEO pitch sessions, industry opportunities',
-    contact: 'support@luma.com',
+    contact: '',
     approved: true,
   },
   {
@@ -63,9 +67,28 @@ export const hackathons: Hackathon[] = [
     image: 'https://healthcare-hackathon.de/logo-color.svg',
     tags: ['Healthcare', 'AI', 'Open Source', 'Berlin', 'Digital Health'],
     prizes: 'Material prizes, credits, licenses, networking with industry leaders',
-    contact: 'berlin@healthcare-hackathon.de',
+    contact: '',
     approved: true,
   },
+    {
+      id: 'xdesign-hackathon-berlin-2026',
+      name: 'XDesign Hackathon x CODE x Lovable x Langdock x Superchat x Knowunity x SPACING',
+      city: 'Berlin',
+      date: '2026-04-18',
+      endDate: '2026-04-18',
+      venue: 'CODE University of Applied Sciences',
+      address: 'Donaustraße 44, 12043 Berlin, Germany',
+      format: 'in-person',
+      description: "A one-day sprint for designers, builders, and founders to explore where product thinking meets fast execution. Industry tracks with real-world challenges, wild track for your own ideas, panel talks, and prizes for best design and execution. Sponsored by CODE University, Lovable, Langdock, Superchat, Knowunity, SPACING, Wonder, and Berlin Design. Hosted by Noë Hecker, Lilly Wallawitsch, Tara Schlosser & Anja Finnegan.",
+      maxParticipants: 200,
+      registeredParticipants: 162,
+      website: 'https://luma.com/8801rq13',
+      image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/event-covers/22/bf1529f7-185c-4503-bfad-97fbb09b8fff.png',
+      tags: ['AI', 'Design', 'Berlin', 'Product', 'CODE University', 'Lovable', 'Langdock', 'Superchat', 'Knowunity', 'SPACING'],
+      prizes: 'Free Lovable credits, awards for best design and best execution (tba)',
+      contact: 'leo.nguyen24112005@gmail.com',
+      approved: true,
+    },
   {
     id: 'hackxplore-2026',
     name: 'HackXplore 2026',
@@ -82,7 +105,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://hackxplore.de/wp-content/uploads/2025/11/HackXplore2025-364-1024x683.jpg',
     tags: ['Innovation', 'Young Professionals', 'Karlsruhe', 'Industry', 'Networking'],
     prizes: 'Big prize pool (cash & more)',
-    contact: 'mail@hackxplore.de',
+    contact: '',
     approved: true,
   },
   {
@@ -101,7 +124,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://www.ja.tum.de/fileadmin/_processed_/7/4/csm_ScienceHack-25_group_header_6fcf02bbe4.png',
     tags: ['Science', 'Students', 'Munich', 'Innovation', 'TUM'],
     prizes: 'Recognition, networking, and more',
-    contact: 'sciencehack@ja.tum.de',
+    contact: '',
     approved: true,
   },
   {
@@ -120,7 +143,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/event-covers/1l/d2466a90-f3b2-4c67-b856-4aaa6696e762.png',
     tags: ['AI', 'Berlin', 'Builders', 'Collaboration', 'Prizes'],
     prizes: 'Over €50,000 in prizes',
-    contact: 'info@techeurope.io',
+    contact: '',
     approved: true,
   },
   {
@@ -139,7 +162,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/event-covers/lr/bbeebf00-633f-438c-859b-42497f5aedce.jpg',
     tags: ['Students', 'Mannheim', 'Q-Summit', 'Pitch', 'Prizes'],
     prizes: 'Cash prizes, exclusive non-cash prizes, goodie bags',
-    contact: 'hackathon@q-summit.com',
+    contact: '',
     approved: true,
   },
   {
@@ -158,7 +181,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://www.blackforesthackathon.de/wp-content/uploads/2023/06/BlackForestHackathon_Logo.png',
     tags: ['Smart Region', 'Black Forest', 'Offenburg', 'AI', 'Sustainability', 'Mobility', 'Energy', 'Data'],
     prizes: '€6,000 in cash prizes, swag, and more',
-    contact: 'info@blackforesthackathon.de',
+    contact: '',
     approved: true,
   },
   {
@@ -177,7 +200,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://www.blackforesthackathon.de/wp-content/uploads/2023/06/BlackForestHackathon_Logo.png',
     tags: ['Pentest', 'Security', 'Hybrid', 'Freiburg', 'Hacking', 'Networking'],
     prizes: '€10,000 in cash prizes, swag, and more',
-    contact: 'info@blackforesthackathon.de',
+    contact: '',
     approved: true,
   },
   {
@@ -196,7 +219,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://www.eventbrite.com/e/_next/image?url=https%3A%2F%2Fimg.evbuc.com%2Fhttps%253A%252F%252Fcdn.evbuc.com%252Fimages%252F1180897288%252F2996656448683%252F1%252Foriginal.20260328-133133%3Fcrop%3Dfocalpoint%26fit%3Dcrop%26w%3D1880%26auto%3Dformat%252Ccompress%26q%3D75%26sharp%3D10%26fp-x%3D0.5%26fp-y%3D0.5%26s%3D4631e300ed3e1c9c915d363d39288179&w=1880&q=75',
     tags: ['Robotics', 'Agentic Coding', 'AI', 'Berlin', 'Innovation'],
     prizes: 'Prizes for top teams and projects',
-    contact: 'info@berlinrobotics-hackathon.com',
+    contact: '',
     approved: true,
   },
   {
@@ -215,7 +238,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/gallery-images/ly/6e401872-c970-4cd1-8961-20f714b9dcf3',
     tags: ['AI', 'Hackathon', 'Hamburg', 'Students', 'Innovation'],
     prizes: 'Prizes for top teams and projects',
-    contact: 'info@cheftreff.de',
+    contact: '',
     approved: true,
   },
   {
@@ -234,7 +257,7 @@ export const hackathons: Hackathon[] = [
     image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/event-covers/6q/aaf9e4d4-4115-41fc-a9d6-3172d0a82ba5.webp',
     tags: ['AI', 'Payments', 'DeFi', 'Berlin', 'Hackathon', 'Algorand', 'x402', 'Tokenization'],
     prizes: '$20,000 USDC prize pool, milestone rewards, ecosystem support',
-    contact: 'info@algorandbuilders.berlin',
+    contact: '',
     approved: true,
   },
     {
@@ -253,7 +276,7 @@ export const hackathons: Hackathon[] = [
       image: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=280,height=280/event-covers/r4/c82a039f-d88c-4bc8-98f7-3a87d4a7218c.png',
       tags: ['AI', 'Munich', 'Codex', 'Entrepreneurs First', 'thinc!', 'Agentic Software'],
       prizes: '1st: $10,000 OpenAI API credits; 2nd: $5,000 OpenAI API credits; 3rd: $1,000 OpenAI API credits; Top 5 teams: 1 year ChatGPT Pro; more TBA',
-      contact: 'leo.nguyen24112005@gmail.com',
+      contact: '',
       approved: true,
     },
 ];

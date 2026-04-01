@@ -50,7 +50,7 @@ export default function HackathonDetailPage() {
             className="w-full h-full object-contain bg-black"
           />
           <div className="absolute top-4 left-4">
-            <Badge className={hackathon.format === 'in-person' ? 'bg-blue-600' : 'bg-purple-600'} size="lg">
+            <Badge className={`${hackathon.format === 'in-person' ? 'bg-blue-600' : 'bg-purple-600'} text-base px-4 py-1`}> 
               {hackathon.format === 'in-person' ? 'In-Person' : 'Hybrid'}
             </Badge>
           </div>
@@ -74,13 +74,13 @@ export default function HackathonDetailPage() {
           <div className="md:col-span-2 space-y-8">
             {/* Description */}
             <Card className="bg-slate-800/50 border-slate-700 p-6">
-              <h2 className="text-2xl font-bold text-white mb-4">About</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">About</h2>
               <p className="text-slate-300 leading-relaxed">{hackathon.description}</p>
             </Card>
 
             {/* Key Details */}
             <Card className="bg-slate-800/50 border-slate-700 p-6">
-              <h2 className="text-2xl font-bold text-white mb-6">Event Details</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">Event Details</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <div>
@@ -110,22 +110,14 @@ export default function HackathonDetailPage() {
 
           {/* Right Sidebar */}
           <div className="space-y-6">
-            {/* Contact Card */}
-            <Card className="bg-slate-800/50 border-slate-700 p-6 space-y-4">
-              <h3 className="font-bold text-white">Get in Touch</h3>
-              <a href={`mailto:${hackathon.contact}`} className="flex items-center gap-3 p-3 rounded-lg bg-slate-700/50 hover:bg-slate-700 transition-colors">
-                <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <span className="text-sm text-slate-200 break-all">{hackathon.contact}</span>
-              </a>
-              <a href={hackathon.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-slate-700/50 hover:bg-slate-700 transition-colors">
-                <Globe className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <span className="text-sm text-slate-200">Visit Website</span>
-              </a>
-            </Card>
+            <a href={hackathon.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-slate-700/50 hover:bg-slate-700 transition-colors">
+              <Globe className="w-5 h-5 text-blue-400 flex-shrink-0" />
+              <span className="text-sm text-slate-200">Visit Website</span>
+            </a>
 
             {/* Venue Info */}
             <Card className="bg-slate-800/50 border-slate-700 p-6">
-              <h3 className="font-bold text-white mb-4">Venue Information</h3>
+              <h3 className="font-bold text-white mb-2">Venue Information</h3>
               <div className="space-y-2 text-sm">
                 <p className="text-slate-300">
                   <span className="font-semibold text-white">{hackathon.venue}</span>
