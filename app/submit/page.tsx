@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Home, CheckCircle } from 'lucide-react';
+import { X as CloseIcon, CheckCircle } from 'lucide-react';
 import { FieldGroup, FieldLabel } from '@/components/ui/field';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cities } from '@/lib/data';
@@ -119,17 +119,6 @@ export default function SubmitPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Navigation */}
-      <nav className="border-b border-slate-800 bg-slate-950/50 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-          <Link href="/" aria-label="Back to home">
-            <Button variant="ghost" size="icon">
-              <Home className="w-4 h-4" />
-            </Button>
-          </Link>
-        </div>
-      </nav>
-
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-12 space-y-4">
@@ -140,7 +129,12 @@ export default function SubmitPage() {
         </div>
 
         {/* Form */}
-        <Card className="bg-slate-800/50 border-slate-700 p-8">
+        <Card className="bg-slate-800/50 border-slate-700 p-8 relative">
+          <Link href="/" aria-label="Back to home" className="absolute top-4 right-4">
+            <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
+              <CloseIcon className="w-4 h-4" />
+            </Button>
+          </Link>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Event Name */}
             <FieldGroup>

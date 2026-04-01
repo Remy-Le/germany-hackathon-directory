@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { cities, getUpcomingHackathons } from '@/lib/data';
 import HackathonCalendar from '@/components/hackathon-calendar';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function HomePage() {
   const upcomingHackathons = getUpcomingHackathons();
@@ -23,16 +22,10 @@ export default function HomePage() {
             <Link href="#events" className="text-slate-300 hover:text-white transition-colors">
               Events
             </Link>
-            <Link href="/submit" className="text-slate-300 hover:text-white transition-colors">
-              Submit Event
-            </Link>
           </div>
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <Link href="/submit">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">Submit Event</Button>
-            </Link>
-          </div>
+          <Link href="/submit">
+            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">Submit Event</Button>
+          </Link>
         </div>
       </nav>
 
