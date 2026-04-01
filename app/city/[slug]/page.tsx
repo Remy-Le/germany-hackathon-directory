@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, ArrowLeft } from 'lucide-react';
 import { cities, getHackathonsByCity, getAllApprovedHackathons } from '@/lib/data';
 
 export default function CityPage() {
@@ -79,16 +79,10 @@ export default function CityPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
           <Card className="bg-slate-800/50 border-slate-700 p-6">
             <div className="text-3xl font-bold text-blue-400 mb-2">{hackathons.length}</div>
             <p className="text-slate-300">Upcoming Hackathons</p>
-          </Card>
-          <Card className="bg-slate-800/50 border-slate-700 p-6">
-            <div className="text-3xl font-bold text-blue-400 mb-2">
-              {hackathons.reduce((sum, h) => sum + h.registeredParticipants, 0)}
-            </div>
-            <p className="text-slate-300">Total Participants</p>
           </Card>
           <Card className="bg-slate-800/50 border-slate-700 p-6">
             <div className="text-3xl font-bold text-blue-400 mb-2">
@@ -141,10 +135,6 @@ export default function CityPage() {
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-blue-400" />
                         <span>{hackathon.venue}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-blue-400" />
-                        <span>{hackathon.registeredParticipants}/{hackathon.maxParticipants} registered</span>
                       </div>
                     </div>
 

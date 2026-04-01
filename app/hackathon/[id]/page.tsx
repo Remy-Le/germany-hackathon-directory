@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, Users, Award, Mail, Globe, ArrowLeft } from 'lucide-react';
+import { MapPin, Calendar, Award, Mail, Globe, ArrowLeft } from 'lucide-react';
 import { getHackathonById } from '@/lib/data';
 
 export default function HackathonDetailPage() {
@@ -104,13 +104,6 @@ export default function HackathonDetailPage() {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div>
-                    <h3 className="text-sm font-semibold text-slate-400 mb-1">Participants</h3>
-                    <div className="flex items-center gap-2 text-white">
-                      <Users className="w-5 h-5 text-blue-400" />
-                      <span>{hackathon.registeredParticipants} / {hackathon.maxParticipants} registered</span>
-                    </div>
-                  </div>
                   <div>
                     <h3 className="text-sm font-semibold text-slate-400 mb-1">Prizes</h3>
                     <div className="flex items-center gap-2 text-white">
