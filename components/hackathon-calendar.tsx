@@ -14,6 +14,8 @@ const CITY_COLORS: Record<string, { bg: string; hover: string; text: string }> =
   Frankfurt: { bg: 'bg-amber-600',  hover: 'hover:bg-amber-500',  text: 'text-white' },
   Cologne:   { bg: 'bg-rose-600',   hover: 'hover:bg-rose-500',   text: 'text-white' },
   Darmstadt: { bg: 'bg-cyan-600',   hover: 'hover:bg-cyan-500',   text: 'text-white' },
+  Mannheim:  { bg: 'bg-fuchsia-600',hover: 'hover:bg-fuchsia-500',text: 'text-white' },
+  Karlsruhe: { bg: 'bg-orange-600', hover: 'hover:bg-orange-500', text: 'text-white' },
 };
 
 const FORMAT_BADGE: Record<string, string> = {

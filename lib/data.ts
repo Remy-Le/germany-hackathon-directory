@@ -25,6 +25,8 @@ export const cities = [
   { name: 'Frankfurt', slug: 'frankfurt' },
   { name: 'Cologne', slug: 'cologne' },
   { name: 'Darmstadt', slug: 'darmstadt' },
+  { name: 'Mannheim', slug: 'mannheim' },
+  { name: 'Karlsruhe', slug: 'karlsruhe' },
 ];
 
 export const hackathons: Hackathon[] = [
