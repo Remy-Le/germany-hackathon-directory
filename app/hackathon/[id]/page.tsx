@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, Award, Mail, Globe, ArrowLeft } from 'lucide-react';
+import { Calendar, Award, Mail, Globe, ArrowLeft } from 'lucide-react';
 import { getHackathonById } from '@/lib/data';
 
 export default function HackathonDetailPage() {
@@ -90,16 +90,6 @@ export default function HackathonDetailPage() {
                       <span>
                         {new Date(hackathon.date).toLocaleDateString('de-DE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} - {new Date(hackathon.endDate).toLocaleDateString('de-DE', { month: 'long', day: 'numeric' })}
                       </span>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-slate-400 mb-1">Location</h3>
-                    <div className="flex items-start gap-2 text-white">
-                      <MapPin className="w-5 h-5 text-blue-400 mt-0.5" />
-                      <div>
-                        <p>{hackathon.venue}</p>
-                        <p className="text-sm text-slate-400">{hackathon.address}</p>
-                      </div>
                     </div>
                   </div>
                 </div>
