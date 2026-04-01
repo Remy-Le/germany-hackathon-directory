@@ -6,6 +6,10 @@ import HackathonCalendar from '@/components/hackathon-calendar';
 
 export default function HomePage() {
   const upcomingHackathons = getUpcomingHackathons();
+  // Get total approved hackathons
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { getAllApprovedHackathons } = require("@/lib/data");
+  const totalHackathons = getAllApprovedHackathons().length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -31,13 +35,23 @@ export default function HomePage() {
 
       {/* Hero + Cities Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-        <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-white text-balance">
-            Germany&apos;s <span className="text-blue-400">Hackathon</span> Directory
-          </h1>
-          <p className="text-slate-400 mt-1 text-sm max-w-xl text-balance">
-            In-person and hybrid events across Berlin, Munich, Hamburg, Frankfurt, Cologne &amp; Darmstadt.
-          </p>
+        <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white text-balance">
+              Germany&apos;s <span className="text-blue-400">Hackathon</span> Directory
+            </h1>
+            <p className="text-slate-400 mt-1 text-sm max-w-xl text-balance">
+              In-person and hybrid events across Berlin, Munich, Hamburg, Frankfurt, Cologne &amp; Darmstadt.
+            </p>
+          </div>
+          <div className="flex flex-col items-center md:ml-4 bg-blue-600 text-white rounded-2xl shadow border border-blue-400 px-8 py-2">
+            <span className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+              {totalHackathons}
+            </span>
+            <span className="text-base md:text-lg font-semibold tracking-wide uppercase opacity-80 -mt-1">
+              hackathons
+            </span>
+          </div>
         </div>
 
         {/* Cities strip */}
