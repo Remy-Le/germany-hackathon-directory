@@ -23,7 +23,7 @@ const FORMAT_BADGE: Record<string, string> = {
   hybrid:      'bg-violet-500/20 text-violet-300 border-violet-500/30',
 };
 
-const DAYS_OF_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 function toLocalDate(dateStr: string) {
   const [y, m, d] = dateStr.split('-').map(Number);
@@ -68,7 +68,8 @@ function buildWeekSlots(
     const clampedStart = event.startDate < weekStart ? weekStart : event.startDate;
     const clampedEnd   = event.endDate   > weekEnd   ? weekEnd   : event.endDate;
 
-    const colStart = clampedStart.getDay();
+    // Make Monday = 0, Sunday = 6
+    const colStart = (clampedStart.getDay() + 6) % 7;
     const colSpan  = Math.round((clampedEnd.getTime() - clampedStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
     const isStart  = sameDay(clampedStart, event.startDate);
     const isEnd    = sameDay(clampedEnd, event.endDate);
@@ -114,7 +115,10 @@ export default function HackathonCalendar() {
   // Build calendar grid — always 6 rows of 7 days
   const firstDayOfMonth = new Date(year, month, 1);
   const startOfGrid     = new Date(firstDayOfMonth);
-  startOfGrid.setDate(startOfGrid.getDate() - startOfGrid.getDay());
+  // Adjust so Monday is the first day of the week
+  const dayOfWeek = startOfGrid.getDay();
+  const diff = (dayOfWeek === 0 ? -6 : 1) - dayOfWeek;
+  startOfGrid.setDate(startOfGrid.getDate() + diff);
 
   const weeks: Date[][] = [];
   for (let w = 0; w < 6; w++) {

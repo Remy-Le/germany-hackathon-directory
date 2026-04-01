@@ -90,13 +90,23 @@ export default function HomePage() {
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Contact</h4>
-              <p className="text-sm text-slate-400">Have questions? Reach out to us at info@hackde.de</p>
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8">
             <p className="text-center text-sm text-slate-400">
               © 2026 HackDE. All rights reserved.
             </p>
+            <div className="flex justify-center mt-2">
+              <a
+                href="https://remyle.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-slate-800 text-slate-200 text-xs px-3 py-1 rounded-full shadow hover:bg-slate-700 transition-colors"
+                style={{ letterSpacing: '0.05em' }}
+              >
+                built by Remy
+              </a>
+            </div>
           </div>
         </div>
       </footer>
